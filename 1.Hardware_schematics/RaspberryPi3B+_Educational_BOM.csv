@@ -1,0 +1,23 @@
+Designator,Part / IC,Function,Package,Notes
+U1,BCM2837B0,SoC (CPU + GPU + VPU),POP,"Quad-core ARM Cortex-A53, 1.4GHz"
+U2,Micron MT41K256M16TW-107,1GB LPDDR2 SDRAM,POP,PoP mounted with SoC
+U3,LAN7515,USB 2.0 Hub + Gigabit Ethernet controller,QFN,Also handles 4x USB ports
+U4,CYW43455,Dual-band Wi-Fi & Bluetooth 4.2,SiP,Includes on-board antenna or u.FL pad
+U5,MXL7704,PMIC,QFN,"Manages core, memory, and USB voltages"
+Y1,19.2 MHz Crystal,Clock for SoC,HC-49 or SMD,
+Y2,25 MHz Crystal,Clock for LAN7515,SMD,
+J1,HDMI Type A,Video/audio output,Connector,Full-size HDMI
+J2,microUSB,Power input (5V),Connector,2.5A recommended
+J3,3.5mm TRRS Jack,Audio/video (composite) output,Connector,Combined A/V jack
+J4,GPIO Header (40-pin),Expansion I/O,2x20 Header,"3.3V logic, includes UART, I2C, SPI, etc."
+J5,Camera Connector (CSI),Camera interface,FFC (15-pin),MIPI CSI
+J6,Display Connector (DSI),LCD display interface,FFC (15-pin),MIPI DSI
+J8,Ethernet (RJ45 with Magnetics),Network,Connector,Gigabit (limited by USB 2.0 internally)
+J9–J12,USB Type A (x4),USB 2.0 Ports,Connector,Managed by LAN7515
+J13,microSD Socket,Boot/storage,Connector,Push-push socket
+D1–D6,TVS Diodes,USB/HDMI ESD protection,SOT23/SOD-323,Protection diodes
+R1–R100+,Resistors,"Pull-ups, series resistors",0402/0603,Varied values (10Ω–100kΩ)
+C1–C100+,Capacitors,"Decoupling, bulk, bypass",0402–1206,"Common values: 0.1µF, 10µF, 100nF"
+L1–L5,Ferrite Beads,Power filtering,0603/0805,"e.g., 600Ω @ 100MHz"
+Q1–Q3,MOSFETs or load switches,Power path control,SOT23,For USB and core supply switching
+LED1–LED3,Status LEDs,"Power, ACT, Ethernet",0603,"ACT (green), PWR (red), Ethernet (yellow/green)"
